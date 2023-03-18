@@ -6,10 +6,10 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 const Header = () => {
   return (
     <div>
-      <AppBar>
+      <AppBar position='sticky'>
         <Container maxWidth="lg">
         <Toolbar>
-            <Typography component="h1" variant='h5' fontWeight="bold" flex={1}>وبلاگ اطلاعات برنامه نویسی</Typography>
+            <Typography component="h1" variant='h5' fontWeight="700" flex={1}>وبلاگ اطلاعات برنامه نویسی</Typography>
             <MenuBookIcon/>
         </Toolbar>
         </Container>

@@ -18,7 +18,7 @@ const Blogs = () => {
 
       {
         data.posts.map(post => (
-          <Grid item xs={12} sm={6} md={4}> <CardEL {...post}/> </Grid>
+          <Grid item xs={12} sm={6} md={4} key={post.id}> <CardEL {...post}/> </Grid>
         ))
       }
      

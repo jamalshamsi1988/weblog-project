@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography,Divider } from '@mui/material'
 
 
@@ -12,13 +12,13 @@ const CardEL = ({title,author,coverPhoto,slug}) => {
             <Typography component="h3" variant='p' color="text.primary" fontWeight="600">{title}</Typography>
       </CardContent>
            <Divider variant="middle" sx={{margin:"10px"}}/>
-    {/* <Link to={`/blogs/${slug}`} style={{width:"100%" , textDecoration:"none"}}>      */}
+    <Link to={`/blogs/${slug}`} style={{width:"100%" , textDecoration:"none"}}>     
       <CardActions >
         <Button variant="outlined" sx={{width:"100%" , borderRadius:3}} size="small" >
          مطالعه مقاله
         </Button>
       </CardActions>
-      {/* </Link>  */}
+      </Link> 
     </Card>
   )
 }

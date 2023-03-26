@@ -12,7 +12,7 @@ const AuthorPage = () => {
     variables:{slug}
   });
 
-  
+
 
   if(loading) return <h4>Loading ...</h4>
     if(errors) return <h4>Error ...</h4>

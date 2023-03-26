@@ -5,12 +5,13 @@ import { Grid } from '@mui/material';
 
 //shared
 import CardEL from '../../shared/CardEL';
+import Loader from '../../shared/Loader';
 
 const Blogs = () => {
     const{loading , data , errors}=useQuery(GET_BLOGS_INFO);
 
 
-    if(loading) return <h4>Loading ...</h4>
+    if(loading) return <Loader />
     if(errors) return <h4>Error ...</h4>
    
   return (

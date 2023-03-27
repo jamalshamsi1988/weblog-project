@@ -57,4 +57,25 @@ query getAuthorInfo($slug: String!){
 
 `;
 
-export {GET_BLOGS_INFO,GET_AUTHORS_INFO,GET_AUTHOR_INFO};
+const GET_POST_INFO = gql`
+query getPostInfo($slug:String!) {
+  post(where: {slug: $slug}) {
+    author {
+      avatar {
+        url
+      }
+      field
+      name
+    }
+    content {
+      html
+    }
+    coverPhoto {
+      url
+    }
+    title
+  }
+}
+
+`;
+export {GET_BLOGS_INFO,GET_AUTHORS_INFO,GET_AUTHOR_INFO,GET_POST_INFO};

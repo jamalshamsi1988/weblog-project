@@ -4,13 +4,19 @@ import { useMutation } from '@apollo/client';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
+import { FormControlLabel } from '@mui/material';
+
 import { SEND_COMMENT } from '../graphql/mutation';
+
 
 const CommentForm = ({slug}) => {
 
   const[name , setName]=useState("");
   const[email , setEmail]=useState("");
   const[text , setText]=useState("");
+  const[pressed , setPressed]=useState(false);
 
   const[sendComment ,{loading,data,errors}]=useMutation(SEND_COMMENT,{
     variables:{name , email , text , slug}
@@ -18,14 +24,16 @@ const CommentForm = ({slug}) => {
 
   const sendHandler= ()=>{
       if(name && email && text){
-          sendComment()
+          sendComment();
+          setPressed(true);
       }else{
         toast.warn("!فیلدها را کامل کنید" , {position:"top-center"})
       }
       
   }
-if(data){
+if(data && pressed){
   toast.success(".کامنت ارسال شد و منتظر تایید میباشد" ,{position:"top-center"})
+  setPressed(false);
 }
 
   return (
@@ -36,7 +44,7 @@ if(data){
           </Typography>
         </Grid>
         <Grid item xs={12} m={2} >
-            <TextField label="نام کاربری" variant='outlined' sx={{width:"100%"}} value={name} onChange={(e)=> setName(e.target.value)} />
+            <TextField label="نام کاربری" variant='outlined' sx={{width:"100%" }}  value={name} onChange={(e)=> setName(e.target.value)}  />
         </Grid>
         <Grid item xs={12} m={2} >
             <TextField label="ایمیل" variant='outlined' sx={{width:"100%"}} value={email} onChange={(e)=> setEmail(e.target.value)}/>

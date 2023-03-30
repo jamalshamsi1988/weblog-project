@@ -1,12 +1,12 @@
 import React ,{useState}from 'react';
-import { Button, Grid, TextField, Typography } from '@mui/material';
+import { Button, Grid, Typography ,TextField} from '@mui/material';
 import { useMutation } from '@apollo/client';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
-import { FormControlLabel } from '@mui/material';
+// import { FormControlLabel } from '@mui/material';
 
 import { SEND_COMMENT } from '../graphql/mutation';
 
@@ -44,7 +44,7 @@ if(data && pressed){
           </Typography>
         </Grid>
         <Grid item xs={12} m={2} >
-            <TextField label="نام کاربری" variant='outlined' sx={{width:"100%" }}  value={name} onChange={(e)=> setName(e.target.value)}  />
+            <TextField label="نام کاربری" variant='outlined' sx={{width:"100%" }}  value={name} onChange={(e)=> setName(e.target.value)} />
         </Grid>
         <Grid item xs={12} m={2} >
             <TextField label="ایمیل" variant='outlined' sx={{width:"100%"}} value={email} onChange={(e)=> setEmail(e.target.value)}/>

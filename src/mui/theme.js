@@ -11,7 +11,7 @@ const theme = createTheme({
             fontWeightfat:"900"
 
     },
-    direction : "rtl"
+    direction : "rtl" 
 })
 
 export default theme;

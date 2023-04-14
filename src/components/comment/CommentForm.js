@@ -1,14 +1,15 @@
 import React ,{useState}from 'react';
-import { Button, Grid, Typography ,TextField} from '@mui/material';
+import { Button, Grid, Typography ,TextField } from '@mui/material';
+
 import { useMutation } from '@apollo/client';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
-// import { FormControlLabel } from '@mui/material';
 
 import { SEND_COMMENT } from '../graphql/mutation';
+
 
 
 const CommentForm = ({slug}) => {
@@ -37,14 +38,16 @@ if(data && pressed){
 }
 
   return (
-      <Grid container sx={{boxShadow:"rgba(0,0,0,0.1) 0px 4px 12px" , borderRadius:4 , py:1 , mt:5}} >
+      <Grid container sx={{boxShadow:"rgba(0,0,0,0.1) 0px 4px 12px" , borderRadius:4 , py:1 , mt:5}}   >
         <Grid item xs={12} m={2}>
           <Typography component="p" variant="h6" color="primary" fontWeight={700} >
                     فرم کامنت
           </Typography>
         </Grid>
         <Grid item xs={12} m={2} >
+  
             <TextField label="نام کاربری" variant='outlined' sx={{width:"100%" }}  value={name} onChange={(e)=> setName(e.target.value)} />
+
         </Grid>
         <Grid item xs={12} m={2} >
             <TextField label="ایمیل" variant='outlined' sx={{width:"100%"}} value={email} onChange={(e)=> setEmail(e.target.value)}/>
@@ -64,7 +67,7 @@ if(data && pressed){
 
         <ToastContainer />
       </Grid>
- 
+
   )
 }
 
